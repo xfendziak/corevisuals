@@ -135,7 +135,7 @@
             padding: 40px 20px;
         }
 
-        .grid-stats, .grid-tools, .grid-shop {
+        .grid-stats, .grid-tools {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
@@ -174,7 +174,7 @@
             margin-top: 5px;
         }
 
-        /* SEKACJA NARZĘDZI I SKLEPU */
+        /* SEKACJA NARZĘDZI */
         .section-title {
             text-align: center;
             text-transform: uppercase;
@@ -209,57 +209,6 @@
         .tool-card:hover .tool-icon {
             opacity: 1;
             transform: scale(1.1);
-        }
-
-        /* STYLE DLA SKLEPU */
-        .shop-card {
-            background: rgba(30, 15, 50, 0.5);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            padding: 40px 20px;
-            border-radius: 20px;
-            text-align: center;
-            transition: 0.3s ease;
-        }
-
-        .shop-card:hover {
-            border-color: #a855f7;
-            background: rgba(168, 85, 247, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .shop-card h3 {
-            margin: 0;
-            font-size: 20px;
-            letter-spacing: 1px;
-            color: #fff;
-        }
-
-        .shop-card .price {
-            display: block;
-            font-size: 36px;
-            font-weight: 900;
-            color: #a855f7;
-            margin: 15px 0;
-            text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-        }
-
-        .buy-btn {
-            display: inline-block;
-            background: #a855f7;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .buy-btn:hover {
-            background: #fff;
-            color: #0a0514;
-            box-shadow: 0 0 20px #fff;
         }
 
         /* FOOTER COPYRIGHT */
@@ -328,25 +277,6 @@
             <div class="tool-card">
                 <span class="tool-icon">C4D</span>
                 <strong>CINEMA 4D</strong>
-            </div>
-        </div>
-
-        <h2 class="section-title" id="sklep">Sklep</h2>
-        <div class="grid-shop">
-            <div class="shop-card">
-                <h3>CorePack - Basic</h3>
-                <span class="price">5 PLN</span>
-                <a href="https://discord.gg/7PWtcsybV3" target="_blank" class="buy-btn">Kup teraz</a>
-            </div>
-            <div class="shop-card">
-                <h3>CorePack - Medium</h3>
-                <span class="price">10 PLN</span>
-                <a href="https://discord.gg/7PWtcsybV3" target="_blank" class="buy-btn">Kup teraz</a>
-            </div>
-            <div class="shop-card">
-                <h3>CorePack - Core</h3>
-                <span class="price">15 PLN</span>
-                <a href="https://discord.gg/7PWtcsybV3" target="_blank" class="buy-btn">Kup teraz</a>
             </div>
         </div>
     </div>

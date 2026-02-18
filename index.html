@@ -16,8 +16,6 @@
             overflow-x: hidden;
             background: radial-gradient(circle at center, #1a0b2e 0%, #0a0514 100%);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
         /* ANIMOWANE GWIAZDY */
@@ -60,6 +58,7 @@
             border-bottom: 1px solid rgba(168, 85, 247, 0.1);
         }
 
+        /* Styl logo jako linku */
         .logo {
             text-decoration: none;
             color: white;
@@ -135,7 +134,6 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
-            flex: 1; /* Popycha stopkę do dołu */
         }
 
         .grid-stats, .grid-tools {
@@ -212,17 +210,6 @@
         .tool-card:hover .tool-icon {
             opacity: 1;
             transform: scale(1.1);
-        }
-
-        /* STOPKA */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: rgba(10, 5, 20, 0.9);
-            border-top: 1px solid rgba(168, 85, 247, 0.1);
-            font-size: 13px;
-            color: #777;
-            letter-spacing: 1px;
         }
     </style>
 </head>

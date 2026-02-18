@@ -3,201 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoreVisuals | Store & Team</title>
+    <title>CoreVisuals — Studio & Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Paleta barw CoreVisuals */
         :root {
-            --primary-purple: #6200ea; /* Główny fiolet */
-            --light-purple: #b388ff;   /* Jasny fiolet do akcentów */
-            --bg-dark: #0a0514;        /* Bardzo ciemny fioletowy czarny */
-            --card-bg: #160d2b;        /* Tło kart produktów */
-            --text-white: #e1ddec;
-        }
-
-        * {
-            box-sizing: border-box;
+            --bg: #050208;
+            --accent: #7b2cbf; /* Głęboki, szlachetny fiolet */
+            --text: #f8f7f9;
+            --muted: #888;
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            line-height: 1.6;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
         }
 
         header {
-            background: linear-gradient(180deg, #120129 0%, var(--bg-dark) 100%);
-            padding: 4rem 1rem;
-            text-align: center;
-            border-bottom: 2px solid var(--primary-purple);
+            padding: 100px 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            font-size: 3rem;
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: -1px;
-            color: white;
-            text-transform: uppercase;
-            margin: 0;
-            text-shadow: 0 0 15px rgba(98, 0, 234, 0.6);
-        }
-
-        nav {
-            margin-top: 20px;
+            font-size: 1.5rem;
+            text-transform: lowercase;
         }
 
         nav a {
-            color: var(--light-purple);
+            color: var(--muted);
             text-decoration: none;
-            margin: 0 15px;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
+            margin-left: 30px;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: white;
-            text-shadow: 0 0 8px var(--light-purple);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
+            color: var(--accent);
         }
 
         section {
-            margin-bottom: 80px;
+            margin-bottom: 120px;
         }
 
         h2 {
-            font-size: 2rem;
-            color: white;
-            border-bottom: 2px solid var(--primary-purple);
-            display: inline-block;
-            margin-bottom: 30px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 40px;
         }
 
-        /* Sekcja Sklepu */
-        .grid {
+        p.intro {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        /* Sklep - Minimalistyczna lista */
+        .shop-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px 40px;
         }
 
-        .item-card {
-            background: var(--card-bg);
-            border: 1px solid #2d1b4d;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .item-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-purple);
-            box-shadow: 0 10px 30px rgba(98, 0, 234, 0.2);
-        }
-
-        .item-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            background: #000;
-        }
-
-        .price {
-            display: block;
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--light-purple);
-            margin: 15px 0;
-        }
-
-        .buy-btn {
-            display: block;
-            background: var(--primary-purple);
-            color: white;
-            padding: 12px;
+        .product {
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: 0.3s;
+            color: inherit;
+            display: block;
         }
 
-        .buy-btn:hover {
-            background: #7c22ff;
-            box-shadow: 0 0 15px var(--primary-purple);
+        .product-img {
+            aspect-ratio: 1/1;
+            background: #0d0616;
+            margin-bottom: 15px;
+            transition: opacity 0.3s;
+        }
+
+        .product:hover .product-img {
+            opacity: 0.7;
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            color: var(--muted);
         }
 
         footer {
-            text-align: center;
-            padding: 40px;
-            border-top: 1px solid #2d1b4d;
+            padding-bottom: 60px;
             font-size: 0.8rem;
-            opacity: 0.6;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 40px 0; flex-direction: column; gap: 20px; }
+            .shop-grid { grid-template-columns: 1fr; }
+            p.intro { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">CoreVisuals</div>
-    <nav>
-        <a href="#about">Team</a>
-        <a href="#store">Store</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<div class="wrapper">
+    <header>
+        <div class="logo">CoreVisuals.</div>
+        <nav>
+            <a href="#store">Store</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<div class="container">
-    
     <section id="about">
-        <h2>O Nas</h2>
-        <p>CoreVisuals to nie tylko zespół, to pasja do tworzenia estetyki. Zajmujemy się projektowaniem, montażem i dostarczaniem unikalnych wrażeń wizualnych dla naszej społeczności.</p>
+        <p class="intro">
+            Tworzymy wizualną esencję. Projektujemy dla tych, którzy widzą więcej. Sklep i kolekcja CoreVisuals.
+        </p>
     </section>
 
     <section id="store">
-        <h2>Sklep</h2>
-        <div class="grid">
-            <div class="item-card">
-                <img src="https://via.placeholder.com/300x300/160d2b/b388ff?text=Core+Tee" alt="Koszulka">
-                <h3>Core Tee v1</h3>
-                <span class="price">120 PLN</span>
-                <a href="mailto:shop@corevisuals.pl?subject=Zamówienie: Koszulka" class="buy-btn">Kup Teraz</a>
-            </div>
-
-            <div class="item-card">
-                <img src="https://via.placeholder.com/300x300/160d2b/b388ff?text=Core+Preset" alt="Digital">
-                <h3>Visual Pack 2024</h3>
-                <span class="price">49 PLN</span>
-                <a href="#" class="buy-btn">Pobierz</a>
-            </div>
-
-            <div class="item-card">
-                <img src="https://via.placeholder.com/300x300/160d2b/b388ff?text=Core+Cap" alt="Czapka">
-                <h3>Logo Cap</h3>
-                <span class="price">75 PLN</span>
-                <a href="mailto:shop@corevisuals.pl?subject=Zamówienie: Czapka" class="buy-btn">Kup Teraz</a>
-            </div>
+        <h2>Selected Items</h2>
+        <div class="shop-grid">
+            <a href="mailto:order@corevisuals.pl" class="product">
+                <div class="product-img"></div>
+                <div class="product-info">
+                    <span>Essential Hoodie</span>
+                    <span class="product-price">249 PLN</span>
+                </div>
+            </a>
+            <a href="mailto:order@corevisuals.pl" class="product">
+                <div class="product-img"></div>
+                <div class="product-info">
+                    <span>Visual Pack .01</span>
+                    <span class="product-price">99 PLN</span>
+                </div>
+            </a>
+            <a href="mailto:order@corevisuals.pl" class="product">
+                <div class="product-img"></div>
+                <div class="product-info">
+                    <span>Logo Tee</span>
+                    <span class="product-price">129 PLN</span>
+                </div>
+            </a>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <p>Masz pytania? Pisz śmiało:</p>
-        <p><strong>Email:</strong> kontakt@corevisuals.pl</p>
-    </section>
-
+    <footer id="contact">
+        <div>© 2026 CoreVisuals</div>
+        <div>ig: @corevisuals • hello@corevisuals.pl</div>
+    </footer>
 </div>
-
-<footer>
-    &copy; 2026 CoreVisuals. Projektowanie wizualne w Twoim stylu.
-</footer>
 
 </body>
 </html>

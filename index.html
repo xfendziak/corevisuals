@@ -135,7 +135,7 @@
             padding: 40px 20px;
         }
 
-        .grid-stats, .grid-tools {
+        .grid-stats, .grid-tools, .grid-shop {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
@@ -174,7 +174,7 @@
             margin-top: 5px;
         }
 
-        /* SEKACJA NARZĘDZI */
+        /* SEKACJA NARZĘDZI I TYTUŁY */
         .section-title {
             text-align: center;
             text-transform: uppercase;
@@ -209,6 +209,53 @@
         .tool-card:hover .tool-icon {
             opacity: 1;
             transform: scale(1.1);
+        }
+
+        /* SKLEP STYLe */
+        .shop-card {
+            background: rgba(30, 15, 50, 0.4);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .shop-card:hover {
+            border-color: #a855f7;
+            background: rgba(168, 85, 247, 0.1);
+        }
+
+        .shop-card h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .shop-card .price {
+            display: block;
+            font-size: 32px;
+            font-weight: 900;
+            color: #a855f7;
+            margin: 15px 0;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            background: #a855f7;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: #7b2ff7;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
         }
 
         /* FOOTER COPYRIGHT */
@@ -260,7 +307,6 @@
         </div>
 
         <h2 class="section-title">Nasz warsztat pracy</h2>
-
         <div class="grid-tools">
             <div class="tool-card">
                 <span class="tool-icon">JS</span>
@@ -277,6 +323,25 @@
             <div class="tool-card">
                 <span class="tool-icon">C4D</span>
                 <strong>CINEMA 4D</strong>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="sklep">Sklep</h2>
+        <div class="grid-shop">
+            <div class="shop-card">
+                <h3>CorePack - Basic</h3>
+                <span class="price">5 PLN</span>
+                <a href="https://discord.gg/7PWtcsybV3" target="_blank" class="shop-btn">Kup teraz</a>
+            </div>
+            <div class="shop-card">
+                <h3>CorePack - Medium</h3>
+                <span class="price">10 PLN</span>
+                <a href="https://discord.gg/7PWtcsybV3" target="_blank" class="shop-btn">Kup teraz</a>
+            </div>
+            <div class="shop-card">
+                <h3>CorePack - Core</h3>
+                <span class="price">15 PLN</span>
+                <a href="https://discord.gg/7PWtcsybV3" target="_blank" class="shop-btn">Kup teraz</a>
             </div>
         </div>
     </div>

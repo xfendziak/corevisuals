@@ -14,12 +14,11 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            /* Zmienione na bardziej fioletowe, ciemne tło */
             background: radial-gradient(circle at center, #1a0b2e 0%, #0a0514 100%);
             min-height: 100vh;
         }
 
-        /* ANIMOWANE GWIAZDY (Fioletowa poświata) */
+        /* ANIMOWANE GWIAZDY */
         body::before {
             content: "";
             position: fixed;
@@ -27,7 +26,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Gwiazdy z fioletowym blaskiem */
             box-shadow: 
                 446px 62px 1px #a855f7, 234px 504px 1px #fff, 
                 567px 123px 1px #7b2ff7, 1200px 450px 1px #fff, 
@@ -51,13 +49,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 10%;
+            padding: 20px 8%;
             background: rgba(10, 5, 20, 0.85);
             backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+        }
+
+        /* Styl logo jako linku */
+        .logo {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
         }
 
         .nav-links a {
@@ -76,7 +86,7 @@
 
         .discord-btn {
             background-color: #5865F2;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 8px;
             text-decoration: none;
             color: white;
@@ -84,18 +94,21 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 14px;
         }
 
         .discord-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+            background-color: #4752c4;
         }
 
         /* HERO SECTION */
         .hero {
             text-align: center;
-            padding: 120px 20px;
+            padding: 100px 20px;
         }
 
         .hero h1 {
@@ -131,7 +144,7 @@
         }
 
         .card {
-            background: rgba(30, 15, 50, 0.4); /* Fioletowy odcień karty */
+            background: rgba(30, 15, 50, 0.4);
             border: 1px solid rgba(168, 85, 247, 0.15);
             backdrop-filter: blur(5px);
             padding: 30px;
@@ -170,17 +183,6 @@
             margin-bottom: 40px;
             font-size: 24px;
             color: #fff;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: #a855f7;
-            margin: 10px auto;
-            border-radius: 2px;
         }
 
         .tool-card {
@@ -214,15 +216,17 @@
 <body>
 
     <nav>
-        <div class="logo"><strong>CoreVisuals</strong></div>
+        <a href="index.html" class="logo"><strong>CoreVisuals</strong></a>
+        
         <div class="nav-links">
-            <a href="#">Strona główna</a>
+            <a href="index.html">Strona główna</a>
             <a href="#">Portfolio</a>
             <a href="#">Sklep</a>
             <a href="#">Vouchery</a>
             <a href="#">Pobieralnia</a>
         </div>
-        <a href="#" class="discord-btn">DISCORD</a>
+
+        <a href="https://discord.gg/TWOJE-ZAPROSZENIE" target="_blank" class="discord-btn">DISCORD</a>
     </nav>
 
     <header class="hero">

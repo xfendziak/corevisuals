@@ -10,17 +10,16 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0f0a14;
             color: white;
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            /* Ciekawsze tło z gradientem */
-            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            /* Zmienione na bardziej fioletowe, ciemne tło */
+            background: radial-gradient(circle at center, #1a0b2e 0%, #0a0514 100%);
             min-height: 100vh;
         }
 
-        /* ANIMOWANE GWIAZDY W TLE */
+        /* ANIMOWANE GWIAZDY (Fioletowa poświata) */
         body::before {
             content: "";
             position: fixed;
@@ -28,14 +27,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Generator małych gwiazdek przy użyciu box-shadow */
-            box-shadow: 446px 62px #FFF , 234px 504px #FFF , 567px 123px #7b2ff7, 1200px 450px #FFF, 800px 200px #FFF, 150px 700px #7b2ff7, 1400px 100px #FFF, 1000px 800px #FFF, 300px 300px #7b2ff7;
+            /* Gwiazdy z fioletowym blaskiem */
+            box-shadow: 
+                446px 62px 1px #a855f7, 234px 504px 1px #fff, 
+                567px 123px 1px #7b2ff7, 1200px 450px 1px #fff, 
+                800px 200px 1px #a855f7, 150px 700px 1px #fff, 
+                1400px 100px 1px #7b2ff7, 1000px 800px 1px #fff;
             border-radius: 50%;
             width: 2px;
             height: 2px;
-            animation: starsAnimation 100s linear infinite;
+            animation: starsAnimation 120s linear infinite;
             z-index: -1;
-            opacity: 0.5;
+            opacity: 0.4;
         }
 
         @keyframes starsAnimation {
@@ -49,15 +52,16 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 10%;
-            background: rgba(15, 10, 20, 0.8);
-            backdrop-filter: blur(10px); /* Efekt rozmytego szkła */
+            background: rgba(10, 5, 20, 0.85);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.1);
         }
 
         .nav-links a {
-            color: #b5b5b5;
+            color: #ccc;
             text-decoration: none;
             margin: 0 15px;
             font-size: 14px;
@@ -71,7 +75,7 @@
         }
 
         .discord-btn {
-            background-color: #a858f2;
+            background-color: #5865F2;
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
@@ -80,19 +84,18 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: 0.3s;
+            transition: transform 0.3s;
         }
 
         .discord-btn:hover {
-            background-color: #a147c4;
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
         }
 
         /* HERO SECTION */
         .hero {
             text-align: center;
             padding: 120px 20px;
-            position: relative;
         }
 
         .hero h1 {
@@ -101,10 +104,10 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            background: linear-gradient(to bottom, #fff 0%, #a855f7 100%);
+            background: linear-gradient(to bottom, #fff 30%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6));
+            filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.5));
         }
 
         .hero p {
@@ -128,8 +131,8 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(168, 85, 247, 0.1);
+            background: rgba(30, 15, 50, 0.4); /* Fioletowy odcień karty */
+            border: 1px solid rgba(168, 85, 247, 0.15);
             backdrop-filter: blur(5px);
             padding: 30px;
             border-radius: 15px;
@@ -138,16 +141,17 @@
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: #a855f7;
-            background: rgba(168, 85, 247, 0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: rgba(168, 85, 247, 0.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
 
         .card h2 {
-            font-size: 36px;
+            font-size: 38px;
             margin: 0;
             color: #fff;
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
         }
 
         .card p {
@@ -155,6 +159,7 @@
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-top: 5px;
         }
 
         /* SEKACJA NARZĘDZI */
@@ -164,20 +169,31 @@
             letter-spacing: 2px;
             margin-bottom: 40px;
             font-size: 24px;
-            color: #a855f7;
+            color: #fff;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #a855f7;
+            margin: 10px auto;
+            border-radius: 2px;
         }
 
         .tool-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(30, 15, 50, 0.3);
             padding: 40px;
             border-radius: 15px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.05);
             transition: 0.3s;
         }
 
         .tool-card:hover {
-            background: rgba(168, 85, 247, 0.1);
+            background: rgba(168, 85, 247, 0.12);
             border-color: #a855f7;
         }
 
@@ -185,12 +201,13 @@
             font-size: 40px;
             margin-bottom: 15px;
             display: block;
-            filter: grayscale(100%);
+            opacity: 0.7;
             transition: 0.3s;
         }
 
         .tool-card:hover .tool-icon {
-            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
         }
     </style>
 </head>
